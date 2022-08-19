@@ -11,7 +11,8 @@ class Project extends Model
 
     protected $fillable = [
         'description',
-        'date_or_creation'
+        'date_of_creation',
+        'creator_id'
     ];
 
     function projectRoles() {
