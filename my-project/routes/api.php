@@ -24,4 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function() {
     Route::apiResource('users', UsersController::class);
     Route::apiResource('projects', ProjectsController::class);
+    Route::get('projects/{id}/creator', [ProjectsController::class, 'creator']);
 });
