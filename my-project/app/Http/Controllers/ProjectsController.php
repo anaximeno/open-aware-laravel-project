@@ -68,4 +68,22 @@ class ProjectsController extends Controller
     {
         Project::findOrFail($id)->delete();
     }
+
+    /* Receives the project id and returns its creator.
+     * */
+    public function creator($id) {
+        return Project::findOrFail($id)->creator;
+    }
+
+    public function getDonationsReceived($id) {
+        return Project::findOrFail($id)->donationsReceived;
+    }
+
+    public function getLikesReceived($id) {
+        return Project::findOrFail($id)->likesReceived;
+    }
+
+    public function getRoles($id) {
+        return Project::findOrFail($id)->projectRoles;
+    }
 }

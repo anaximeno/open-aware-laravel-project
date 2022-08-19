@@ -32,4 +32,7 @@ Route::prefix('v1')->group(function() {
     Route::get('users/{id}/donations', [UsersController::class, 'getDonationsMadeToProjects']);
 
     Route::get('projects/{id}/creator', [ProjectsController::class, 'creator']);
+    Route::get('projects/{id}/donations', [ProjectsController::class, 'getDonationsReceived']);
+    Route::get('projects/{id}/likes', [ProjectsController::class, 'getLikesReceived']);
+    Route::get('projects/{id}/roles', [ProjectsController::class, 'getRoles']);
 });
