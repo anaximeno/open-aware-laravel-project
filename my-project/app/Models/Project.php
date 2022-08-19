@@ -28,6 +28,6 @@ class Project extends Model
     }
 
     function creator() {
-        return $this->hasOne(User::class, 'id');
+        return $this->belongsTo(User::class);
     }
 }

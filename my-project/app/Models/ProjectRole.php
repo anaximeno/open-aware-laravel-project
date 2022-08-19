@@ -16,10 +16,10 @@ class ProjectRole extends Model
     ];
 
     function project() {
-        return $this->hashOne(Project::class);
+        return $this->belongsTo(Project::class);
     }
 
     function user() {
-        return $this->hashOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }

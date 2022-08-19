@@ -10,10 +10,10 @@ class Like extends Model
     use HasFactory;
 
     function user() {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     function project() {
-        return $this->hashone(Project::class);
+        return $this->belongsTo(Project::class);
     }
 }
