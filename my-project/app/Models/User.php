@@ -53,4 +53,8 @@ class User extends Authenticatable
     function likesGiven() {
         return $this->hasMany(Like::class);
     }
+
+    function projectsCreated() {
+        return $this->hasMany(Project::class, 'creator_id');
+    }
 }

@@ -64,4 +64,20 @@ class UsersController extends Controller
     {
         User::findOrFail($id)->delete();
     }
+
+    public function getProjectsCreated($id) {
+        return User::findOrFail($id)->projectsCreated;
+    }
+
+    public function getRolesOnProjects($id) {
+        return User::findOrFail($id)->rolesOnProjects;
+    }
+
+    public function getLikesGivenToProjects($id) {
+        return User::findOrFail($id)->likesGiven;
+    }
+
+    public function getDonationsMadeToProjects($id) {
+        return User::findOrFail($id)->donationsMade;
+    }
 }
