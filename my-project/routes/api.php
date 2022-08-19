@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProjectsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,4 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::prefix('v1')->group(function() {
+    Route::apiResource('users', UsersController::class);
+    Route::apiResource('projects', ProjectsController::class);
 });
