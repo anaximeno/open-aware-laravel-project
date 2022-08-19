@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('project_id')->references('id')->on('projects');
             $table->primary(['user_id', 'project_id']);
+            $table->timestamps();
             $table->decimal('value_in_dollars', 16, 4);
             $table->text('description')->nullable();
         });
