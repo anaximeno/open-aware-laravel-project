@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function() {
     Route::apiResource('users', UsersController::class);
     Route::apiResource('projects', ProjectsController::class);
-    Route::apiResource('roles', ProjecRolesController::class);
+    Route::apiResource('roles', ProjectRolesController::class);
     Route::apiResource('likes', LikesController::class);
     Route::apiResource('donations', DonationsController::class);
 
