@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ProjectRolesController;
+use App\Http\Controllers\LikesController;
+use App\Http\Controllers\DonationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +27,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function() {
     Route::apiResource('users', UsersController::class);
     Route::apiResource('projects', ProjectsController::class);
+    Route::apiResource('roles', ProjecRolesController::class);
+    Route::apiResource('likes', LikesController::class);
+    Route::apiResource('donations', DonationsController::class);
 
     Route::get('users/{id}/projects', [UsersController::class, 'getProjectsCreated']);
     Route::get('users/{id}/roles', [UsersController::class, 'getRolesOnProjects']);

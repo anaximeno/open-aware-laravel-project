@@ -9,6 +9,13 @@ class Donation extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'project_id',
+        'value_in_dollars',
+        'description'
+    ];
+
     function donator() {
         return $this->belongsTo(User::class);
     }
