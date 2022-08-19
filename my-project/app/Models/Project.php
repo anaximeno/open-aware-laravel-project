@@ -9,7 +9,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    $fillable = [
+    protected $fillable = [
         'description',
         'date_or_creation'
     ];
@@ -19,7 +19,7 @@ class Project extends Model
     }
 
     function donationsReceived() {
-        return $this->hasMany(Donation:class);
+        return $this->hasMany(Donation::class);
     }
 
     function likesReceived() {

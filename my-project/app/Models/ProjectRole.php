@@ -9,7 +9,7 @@ class ProjectRole extends Model
 {
     use HasFactory;
 
-    $fillable = [
+    protected $fillable = [
         'name',
         'description',
         'end_at'
