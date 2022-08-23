@@ -29,7 +29,7 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
         $req = $request->only(['creator_id', 'description', 'date_of_creation']);
-        $req['date_of_creation'] = Carbon::parse($req['date_of_creation'])->toDatetimeString();
+        $req['date_of_creation'] = Carbon::parse($req['date_of_creation'])->toDate();
         return Project::create($req);
     }
 
@@ -75,12 +75,12 @@ class ProjectsController extends Controller
         return Project::findOrFail($id)->creator;
     }
 
-    public function getDonationsReceived($id) {
-        return Project::findOrFail($id)->donationsReceived;
+    public function getDonations($id) {
+        return Project::findOrFail($id)->donations;
     }
 
-    public function getLikesReceived($id) {
-        return Project::findOrFail($id)->likesReceived;
+    public function getLikes($id) {
+        return Project::findOrFail($id)->likes;
     }
 
     public function getRoles($id) {
