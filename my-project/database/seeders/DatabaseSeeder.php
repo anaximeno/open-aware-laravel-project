@@ -17,11 +17,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->has(Project::factory()
-            ->count(3)
-            ->state(function (array $attributes, User $user) {
-                return ['creator_id' => $user->id];
-            }), 'projectsCreated')->create();
+        for ($i = 0 ; $i < 10 ; $i += 1) {
+            User::factory(1)->has(Project::factory()
+                ->count(rand(0, 3))
+                ->state(function (array $attributes, User $user) {
+                    return ['creator_id' => $user->id];
+                }))->create();
+        }
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
