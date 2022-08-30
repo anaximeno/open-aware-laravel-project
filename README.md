@@ -12,7 +12,8 @@ docker-compose up
 ```
 
 Wait for the images to be downloaded and then you can interact with the project using port 8000 of your localhost address.
-It has a Restful API on the route /api/v1, with the following routes bindings:
+
+The Restful API is binded to the route /api/v1, with the following HTTP methods on the sub-routes:
 
 * /users (GET, POST, DELETE, PATCH, PUT)
   - /users/{id}/projects (GET)
