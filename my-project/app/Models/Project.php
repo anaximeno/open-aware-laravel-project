@@ -19,11 +19,11 @@ class Project extends Model
         return $this->hasMany(ProjectRole::class);
     }
 
-    function donationsReceived() {
+    function donations() {
         return $this->hasMany(Donation::class);
     }
 
-    function likesReceived() {
+    function likes() {
         return $this->hasMany(Like::class);
     }
 

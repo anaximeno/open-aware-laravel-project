@@ -14,15 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('project_roles', function (Blueprint $table) {
-            $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('project_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('project_id')->references('id')->on('projects');
-            $table->primary(['user_id', 'project_id']);
+            $table->id();
             $table->string('name');
+
+            $table->bigInteger('user_id')->unsigned()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->bigInteger('project_id')->unsigned();
+            $table->foreign('project_id')->references('id')->on('projects');
+
             $table->text('description')->nullable();
-            $table->timestamp('begum_at');
-            $table->timestamp('terminated_at')->nullable();
+            $table->timestamp('begun_at')->nullable();
+            $table->timestamp('ended_at')->nullable();
             $table->timestamps();
         });
     }

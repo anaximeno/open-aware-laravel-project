@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->bigInteger('creator_id')->unsigned();
+            $table->bigInteger('creator_id')->unsigned()->nullable();
             $table->foreign('creator_id')->references('id')->on('users');
-            $table->string('description')->nullable();
-            $table->time('date_of_creation');
+            $table->longText('description')->nullable();
+            $table->date('date_of_creation');
         });
     }
 

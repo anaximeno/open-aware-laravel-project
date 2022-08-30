@@ -31,13 +31,13 @@ Route::prefix('v1')->group(function() {
     Route::apiResource('likes', LikesController::class);
     Route::apiResource('donations', DonationsController::class);
 
-    Route::get('users/{id}/projects', [UsersController::class, 'getProjectsCreated']);
-    Route::get('users/{id}/roles', [UsersController::class, 'getRolesOnProjects']);
-    Route::get('users/{id}/likes', [UsersController::class, 'getLikesGivenToProjects']);
-    Route::get('users/{id}/donations', [UsersController::class, 'getDonationsMadeToProjects']);
+    Route::get('users/{id}/projects', [UsersController::class, 'getProjects']);
+    Route::get('users/{id}/roles', [UsersController::class, 'getProjectRoles']);
+    Route::get('users/{id}/likes', [UsersController::class, 'getLikes']);
+    Route::get('users/{id}/donations', [UsersController::class, 'getDonations']);
 
     Route::get('projects/{id}/creator', [ProjectsController::class, 'creator']);
-    Route::get('projects/{id}/donations', [ProjectsController::class, 'getDonationsReceived']);
-    Route::get('projects/{id}/likes', [ProjectsController::class, 'getLikesReceived']);
+    Route::get('projects/{id}/donations', [ProjectsController::class, 'getDonations']);
+    Route::get('projects/{id}/likes', [ProjectsController::class, 'getLikes']);
     Route::get('projects/{id}/roles', [ProjectsController::class, 'getRoles']);
 });

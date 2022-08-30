@@ -42,19 +42,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function rolesOnProjects() {
+    function projectRoles() {
         return $this->hasMany(ProjectRole::class);
     }
 
-    function donationsMade() {
+    function donations() {
         return $this->hasMany(Donation::class);
     }
 
-    function likesGiven() {
+    function likes() {
         return $this->hasMany(Like::class);
     }
 
-    function projectsCreated() {
+    function projects() {
         return $this->hasMany(Project::class, 'creator_id');
     }
 }

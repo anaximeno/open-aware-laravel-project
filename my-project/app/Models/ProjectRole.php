@@ -12,10 +12,10 @@ class ProjectRole extends Model
     protected $fillable = [
         'name',
         'description',
-        'end_at',
+        'ended_at',
         'project_id',
         'user_id',
-        'begum_at'
+        'begun_at'
     ];
 
     function project() {
